@@ -32,7 +32,11 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
             return (
               <PaginationNumber
+<<<<<<< HEAD
                 key={page}
+=======
+                key={`${page}-${index}`}
+>>>>>>> 6ee1da485abf7df8017e0952223ab801b134751a
                 href={createPageURL(page)}
                 page={page}
                 position={position}

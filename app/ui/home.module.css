@@ -1,8 +1,15 @@
 .shape {
     height: 0;
     width: 0;
+<<<<<<< HEAD
     border-bottom: 30px solid black;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
   }
   
+=======
+    border-bottom: 30px, solid black;
+    border-left: 20px, transparent solid;
+    border-right: 20px, transparent solid;
+}
+>>>>>>> 6ee1da485abf7df8017e0952223ab801b134751a

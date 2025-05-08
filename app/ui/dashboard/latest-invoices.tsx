@@ -16,7 +16,11 @@ export default async function LatestInvoices({
       <div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-4">
         {/* NOTE: Uncomment this code in Chapter 7 */}
 
+<<<<<<< HEAD
         {/* <div className="bg-white px-6">
+=======
+        <div className="bg-white px-6">
+>>>>>>> 6ee1da485abf7df8017e0952223ab801b134751a
           {latestInvoices.map((invoice, i) => {
             return (
               <div
@@ -53,7 +57,11 @@ export default async function LatestInvoices({
               </div>
             );
           })}
+<<<<<<< HEAD
         </div> */}
+=======
+        </div>
+>>>>>>> 6ee1da485abf7df8017e0952223ab801b134751a
         <div className="flex items-center pb-2 pt-6">
           <ArrowPathIcon className="h-5 w-5 text-gray-500" />
           <h3 className="ml-2 text-sm text-gray-500 ">Updated just now</h3>
