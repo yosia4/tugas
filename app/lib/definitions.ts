@@ -16,15 +16,28 @@ export type Customer = {
   image_url: string;
 };
 
+// export type Invoice = {
+//   id: string;
+//   customer_id: string;
+//   amount: number;
+//   date: string;
+//   // In TypeScript, this is called a string union type.
+//   // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
+//   status: 'pending' | 'paid';
+// };
+
 export type Invoice = {
-  id: string;
-  customer_id: string;
-  amount: number;
-  date: string;
-  // In TypeScript, this is called a string union type.
-  // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
+  id: string; // ID unik untuk setiap faktur
+  customer_id: string; // ID pelanggan yang terkait dengan faktur
+  amount: number; // Jumlah total dalam faktur
+  date: string; // Tanggal pembuatan faktur
+
+  // Dalam TypeScript, ini disebut sebagai "string union type".
+  // Artinya, properti "status" hanya bisa memiliki salah satu dari dua nilai:
+  // 'pending' (belum dibayar) atau 'paid' (sudah dibayar).
   status: 'pending' | 'paid';
 };
+
 
 export type Revenue = {
   month: string;
