@@ -2,6 +2,7 @@
 // It describes the shape of the data, and what data type each property should accept.
 // For simplicity of teaching, we're manually defining these types.
 // However, these types are generated automatically if you're using an ORM such as Prisma.
+
 export type User = {
   id: string;
   name: string;
@@ -16,17 +17,6 @@ export type Customer = {
   image_url: string;
 };
 
-<<<<<<< HEAD
-// export type Invoice = {
-//   id: string;
-//   customer_id: string;
-//   amount: number;
-//   date: string;
-//   // In TypeScript, this is called a string union type.
-//   // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
-//   status: 'pending' | 'paid';
-// };
-
 export type Invoice = {
   id: string; // ID unik untuk setiap faktur
   customer_id: string; // ID pelanggan yang terkait dengan faktur
@@ -39,19 +29,6 @@ export type Invoice = {
   status: 'pending' | 'paid';
 };
 
-
-=======
-export type Invoice = {
-  id: string;
-  customer_id: string;
-  amount: number;
-  date: string;
-  // In TypeScript, this is called a string union type.
-  // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
-  status: 'pending' | 'paid';
-};
-
->>>>>>> 6ee1da485abf7df8017e0952223ab801b134751a
 export type Revenue = {
   month: string;
   revenue: number;
