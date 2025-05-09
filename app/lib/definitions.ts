@@ -26,7 +26,7 @@ export type Customer = {
 //   status: 'pending' | 'paid';
 // };
 
-export type Invoice = {
+export type InvoiceBasic = {
   id: string; // ID unik untuk setiap faktur
   customer_id: string; // ID pelanggan yang terkait dengan faktur
   amount: number; // Jumlah total dalam faktur
