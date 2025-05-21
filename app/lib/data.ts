@@ -32,6 +32,7 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices() {
   try {
+
     console.log('Fetching latest invoices...');
     await new Promise((resolve) => setTimeout(resolve, 5000));
 
@@ -42,14 +43,12 @@ export async function fetchLatestInvoices() {
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
-      LIMIT 4
-    `;
+      LIMIT 6`;
 
     const latestInvoices = data.map((invoice) => ({
       ...invoice,
       amount: formatCurrency(invoice.amount),
     }));
-
     return latestInvoices;
   } catch (error) {
     console.error('Database Error:', error);
@@ -59,6 +58,7 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
   try {
+
     console.log('Fetching card data...');
     await new Promise((resolve) => setTimeout(resolve, 7000));
 
@@ -69,12 +69,10 @@ export async function fetchCardData() {
     // how to initialize multiple queries in parallel with JS.
     const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
     const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
-    const invoiceStatusPromise = sql`
-      SELECT
-        SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
-        SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
-      FROM invoices
-    `;
+    const invoiceStatusPromise = sql`SELECT
+         SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
+         SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
+         FROM invoices`;
 
     const data = await Promise.all([
       invoiceCountPromise,
@@ -100,7 +98,6 @@ export async function fetchCardData() {
 }
 
 const ITEMS_PER_PAGE = 6;
-
 export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
@@ -232,4 +229,3 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
-  
