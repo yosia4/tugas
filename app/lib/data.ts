@@ -42,7 +42,7 @@ export async function fetchLatestInvoices() {
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
-      LIMIT 6
+      LIMIT 4
     `;
 
     const latestInvoices = data.map((invoice) => ({
@@ -232,3 +232,4 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+  
